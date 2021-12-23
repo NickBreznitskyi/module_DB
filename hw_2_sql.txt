@@ -81,7 +81,9 @@ where Education = 'high';
 
 
 18. Усіх клієнтів київських відділень пересилити до Києва.
-update client set City = 'Kyiv' where Department_idDepartment = 1 or Department_idDepartment = 4;
+update client join department d on d.idDepartment = client.Department_idDepartment
+set City='Kyiv'
+where DepartmentCity = 'kyiv';
 
 
 19. Видалити усі кредити, які є повернені.
